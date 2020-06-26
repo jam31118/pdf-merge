@@ -36,7 +36,7 @@
 
 4. Run the script with python.
 
-   ``` python
+   ``` shell
    py C:\Users\ahn\merge-pdf.py
    ```
 
