@@ -22,7 +22,7 @@
 
 2. Open up the Windows default command terminal, e.g.
 
-   `Windows` + `R`
+   `Windows` + `R` and enter `cmd`
 
    
 
