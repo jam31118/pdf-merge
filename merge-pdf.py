@@ -23,13 +23,14 @@ if sort_file_list:
     file_name_list.sort()
 
 pdf_file_paths = []
+excluded_file_names = []
 from os.path import splitext, join
 for file_name in file_name_list:
     file_extension = splitext(file_name)[-1]
-    #print("processing {0} with file extension: {1}".format(file_name, file_extension))
-    if file_extension == '.pdf':
+    if file_extension.lower() == '.pdf':
         file_path = join(home_dir, file_name)
         pdf_file_paths.append(file_path)
+    else: excluded_file_names.append(file_name)
 
 
 print("[ LOG ] Following pdf files will be merged: ", end='\n\n')
@@ -50,8 +51,14 @@ for pdf_file, pdf_file_path in zip(pdf_files, pdf_file_paths):
     print("done", flush=True)
 
 
-merger.write(merge_pdf_file_name)
+try: merger.write(merge_pdf_file_name)
+except: raise Exception("[ERROR] PDF Merge Failed.")
+
+print("")
+print("[ LOG ] If the Merge has been succeeded, the merged PDF file name is : '{:s}'".format(merge_pdf_file_name))
 
 for pdf_file in pdf_files: pdf_file.close()
 
-
+print("[ LOG ] The number of merged PDF files: {:d}".format(len(pdf_files)))
+print("[ LOG ] The following files are excluded from the merge: ", end='\n\n')
+print(excluded_file_names)
