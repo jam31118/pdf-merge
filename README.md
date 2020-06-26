@@ -22,7 +22,7 @@
 
 2. Open up the Windows default command terminal, e.g.
 
-   `Windows` + `R`
+   `Windows` + `R` and enter `cmd`
 
    
 
@@ -48,6 +48,6 @@
 
 ### Some technical details
 
-- If one uses a `virtualenv` or `venv`, to install the required package like `PyPDF2`, let's be sure whether one have entered that virtual environment.
-- If you did not added your path to the python executable `py` to your `PATH` environment variable, then use absolute path to the python executable, when running the main script.
+- If one uses a `virtualenv` or `venv`, to install the required package like `PyPDF2`, let's be sure whether one have already entered that virtual environment.
+- If you did not add the path to the python executable `py` to your `PATH` environment variable, then you may use absolute path to the python executable, when running the main script.
 
