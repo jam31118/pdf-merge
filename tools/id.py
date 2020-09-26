@@ -61,6 +61,13 @@ else: print("[ LOG ] The student ID could be extracted from all PDF files.", end
     
 unique_val, indices, counts = np.unique(stud_id_list, return_counts=True, return_index=True)
 
+for uuu in unique_val:
+    print(uuu)
+
+np.savetxt("id-given.txt", unique_val, delimiter='\n',fmt='%d')
+
+#print(unique_val )
+
 duplicate_values = stud_id_arr[indices[counts > 1]]
 print("[ LOG ] The list of student ID with multiple files - - - - START")
 for dup_val in duplicate_values:
